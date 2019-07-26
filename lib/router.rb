@@ -1,14 +1,15 @@
-
-require_relative 'controller'
+$:.unshift File.expand_path("../lib",__FILE__)
+require 'controller'
 class Router
-	attr_accessor :controller
+	attr_accessor :controller, :params
 
 	def initialize
 		@controller = Controller.new
+		@params =params
 	end
+
 	def perform
 		puts "BIENVENUE DANS THE GOSSIP PROJECT"
-
     while true
 
       #on affiche le menu

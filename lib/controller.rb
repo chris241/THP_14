@@ -1,3 +1,4 @@
+$:.unshift File.expand_path("lib",__FILE__)
 require 'view'
 require 'gossip'
 class Controller

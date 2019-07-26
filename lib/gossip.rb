@@ -10,6 +10,5 @@ class Gossip
 		#apprendre CSV 
 	end
 end 
-binding.pry
-#my_gossip = Gossip.new("auteur", "ceci est un exemple content")
-#my_gossip.save
+my_gossip = Gossip.new("auteur", "ceci est un exemple content")
+my_gossip.save
