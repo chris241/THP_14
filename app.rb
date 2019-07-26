@@ -7,5 +7,4 @@ class App
 		Router.new.perform	
 	end
 end
-
 App.new.perform

@@ -4,7 +4,7 @@ class Router
 	attr_accessor :controller, :params
 
 	def initialize
-		@controller = Controller.new.perform
+		@controller = Controller.new
 	end
 
 	def perform
@@ -14,6 +14,8 @@ class Router
       #on affiche le menu
       puts "Tu veux faire quoi jeune mouss' ?"
       puts "1. Je veux créer un gossip"
+       puts "2.Je veux afficher"
+       puts "3. Je veux supprimer"
       puts "4. Je veux quitter l'app"
       params = gets.chomp.to_i #on attend le choix de l'utilisateur
 
@@ -21,6 +23,15 @@ class Router
       when 1
         puts "Tu as choisi de créer un gossip" 
         @controller.create_gossip
+        break
+       when 2
+        puts "Affiche la liste" 
+        @controller.show_gossip
+        break
+         when 3
+        puts "Supprimer la liste" 
+        @controller.show_gossip
+        break
 
       when 4
         puts "À bientôt !"

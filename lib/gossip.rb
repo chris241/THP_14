@@ -1,22 +1,17 @@
 require 'csv'
+$:.unshift File.expand_path("../lib",__FILE__)
+require 'view'
 class Gossip
-	attr_accessor  :author , :content
-	def initialize
+	attr_accessor  :author, :content 
+	def initialize(author, content)
+		@author = author
 		@content = content
-		@author =  author
 	end
-	def create_gossip
-		puts "Entrer le nom de l'auteur::"
-		@author = gets.chomp
-		puts "Entrez le potion :"
-		@content = gets.chomp	
-		[@content, @author]
-	end
+
 	def save
-		puts "#{@content} et l'auteur est : #{@author}"
-		CSV.open('../db/gossip.csv', 'a') do |csv|
-			csv<<["Auteur","content"]
-			csv<<[@author,@content]
+		CSV.open('db/gossip.csv', 'a+') do |csv|
+			csv<< ["Auteur","content"]
+			csv<< [@author, @content]
 		end
 	end
 end 

@@ -1,19 +1,19 @@
-$:.unshift File.expand_path("../",__FILE__)
 $:.unshift File.expand_path("../lib",__FILE__)
 require 'view'
 require 'gossip'
 class Controller
-	attr_accessor :view, :gossip
+	attr_accessor :view, :gossip, :params
 	def initialize
-		@gossip = Gossip.new
-		@view = View.new
+		@view = View.new	
+		
 	end
-
 	#creation d'un pontin			
-	def create_gossip			
-		gossip.save
+	def create_gossip
+		params =Hash.new	
+		params = @view.create_gossip
+		@gossip = Gossip.new(params[:author], params[:content])	
+		@gossip.save
 	end
-
 	#affiche la liste des potins
 	def show_gossip		
 
@@ -22,9 +22,4 @@ class Controller
 	#supprimer un potin
 	def delete_gossip
 	end
-
-	def perform
-		create_gossip
-	end
 end
-Controller.new.perform
