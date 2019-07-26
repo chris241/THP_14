@@ -14,5 +14,10 @@ class Gossip
 			csv<< [@author, @content]
 		end
 	end
+	def show_gossip
+		CSV.foreach('db/gossip.csv') do |csv|
+		puts csv.inspect
+		end
+	end
 end 
 

@@ -14,11 +14,10 @@ class View
 	def show_gossip
 		CSV.foreach('db/gossip.csv') do |csv|
 		puts csv.inspect
+	end
 		end
 		def delete_gossip
-		CSV.foreach('db/gossip.csv') do |csv|
-		puts csv.inspect
 		end
-	end
+
 end
 
