@@ -1,4 +1,4 @@
-# THP_14
+# THP_J14
 MVC, Model View Controller
  Projet: Gossip
 affiche des potins avec les auteur et les ragots sur le site. 
