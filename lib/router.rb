@@ -4,8 +4,7 @@ class Router
 	attr_accessor :controller, :params
 
 	def initialize
-		@controller = Controller.new
-		@params =params
+		@controller = Controller.new.perform
 	end
 
 	def perform
@@ -30,7 +29,6 @@ class Router
       else
         puts "Ce choix n'existe pas, merci de ressayer" #Si l'utilisateur saisit une entrée non prévue, il retourne au début du "while true". 
         #C'est pour ça que la boucle est infinie: potentiellement, il peut se gourer jusqu'à la fin des temps :)
-
       end
     end
   end

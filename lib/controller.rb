@@ -1,15 +1,16 @@
-$:.unshift File.expand_path("lib",__FILE__)
+$:.unshift File.expand_path("../",__FILE__)
+$:.unshift File.expand_path("../lib",__FILE__)
 require 'view'
 require 'gossip'
 class Controller
 	attr_accessor :view, :gossip
 	def initialize
+		@gossip = Gossip.new
 		@view = View.new
 	end
 
 	#creation d'un pontin			
 	def create_gossip			
-		gossip = Gossip.new("Jean-Michel Concierge", "Féfé est de Bordeaux")
 		gossip.save
 	end
 
@@ -23,6 +24,7 @@ class Controller
 	end
 
 	def perform
-		
+		create_gossip
 	end
 end
+Controller.new.perform
