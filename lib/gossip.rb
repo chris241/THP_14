@@ -1,6 +1,7 @@
 class Gossip
-	attr_accessor :content, :autor
-	def initialize(content, author)
-		@content, @author = content, author
+	attr_accessor  :author , :content
+	def initialize(author, content)
+		@content = content
+		@author =  author
 	end
 end
